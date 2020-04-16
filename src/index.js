@@ -3,6 +3,8 @@ import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 
+import './config/ReactotronConfig';
+
 import App from './App';
 
 export default function Index() {
