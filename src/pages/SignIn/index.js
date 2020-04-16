@@ -1,8 +1,22 @@
 import React from 'react';
-import { Text } from 'react-native';
 
-// import { Container } from './styles';
+import { Container, Logo, FormInput, FormButton, ButtonText } from './styles';
+
+import logo from '~/assets/logo.png';
 
 export default function SignIn() {
-  return <Text>Hello World</Text>;
+  function handleSubmit() {}
+
+  return (
+    <Container>
+      <Logo source={logo} />
+      <FormInput
+        placeholder="Informe seu ID de cadastro"
+        placeholderTextColor="#999999"
+      />
+      <FormButton onPress={() => handleSubmit()}>
+        <ButtonText>Entrar no sistema</ButtonText>
+      </FormButton>
+    </Container>
+  );
 }
