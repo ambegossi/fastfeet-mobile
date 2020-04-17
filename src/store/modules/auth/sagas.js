@@ -9,6 +9,7 @@ import { signInSuccess, signFailure } from './actions';
 export function* signIn({ payload }) {
   try {
     const { id } = payload;
+
     const response = yield call(api.get, 'deliverymens', {
       params: { id },
     });
@@ -17,7 +18,6 @@ export function* signIn({ payload }) {
       Alert.alert('Falha no login', 'Nenhum entregador encontrado');
       return;
     }
-
     yield put(signInSuccess(response.data));
   } catch (err) {
     Alert.alert('Falha no login', 'Verifique seu ID');
