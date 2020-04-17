@@ -2,15 +2,76 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import SignIn from './pages/SignIn';
+import Dashboard from './pages/Dashboard';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
 
 export default function createRouter(isSigned = false) {
+  function DashboardRoot() {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Dashboard"
+          component={Dashboard}
+          options={{ headerMode: 'screen', headerShown: false }}
+        />
+      </Stack.Navigator>
+    );
+  }
+
+  function Root() {
+    return (
+      <Tabs.Navigator
+        tabBarOptions={{
+          activeTintColor: '#7D40e7',
+          inactiveTintColor: '#999',
+          style: {
+            height: 70,
+            paddingBottom: 10,
+          },
+          labelStyle: {
+            fontSize: 14,
+            marginTop: -8,
+          },
+          keyboardHidesTabBar: true,
+        }}
+      >
+        <Tabs.Screen
+          name="Entregas"
+          component={DashboardRoot}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <Icon
+                name="reorder"
+                size={26}
+                color={focused ? '#7d40e7' : '#999'}
+              />
+            ),
+          }}
+        />
+      </Tabs.Navigator>
+    );
+  }
+
   return (
-    <Stack.Navigator headerMode="none">
-      <Stack.Screen name="SignIn" component={SignIn} />
+    <Stack.Navigator>
+      {isSigned ? (
+        <Stack.Screen
+          name="Root"
+          component={Root}
+          options={{ headerMode: 'screen', headerShown: false }}
+        />
+      ) : (
+        <Stack.Screen
+          name="SignIn"
+          component={SignIn}
+          options={{ headerMode: 'screen', headerShown: false }}
+        />
+      )}
     </Stack.Navigator>
   );
 }
