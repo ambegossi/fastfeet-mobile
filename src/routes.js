@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import Details from './pages/Details';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -20,6 +21,17 @@ export default function createRouter(isSigned = false) {
           component={Dashboard}
           options={{ headerMode: 'screen', headerShown: false }}
         />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: 'Detalhes da encomenda',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerTransparent: true,
+            headerTintColor: '#fff',
+          }}
+        />
       </Stack.Navigator>
     );
   }
@@ -31,7 +43,7 @@ export default function createRouter(isSigned = false) {
           activeTintColor: '#7D40e7',
           inactiveTintColor: '#999',
           style: {
-            height: 70,
+            height: 65,
             paddingBottom: 10,
           },
           labelStyle: {
