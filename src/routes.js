@@ -8,6 +8,7 @@ import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Details from './pages/Details';
+import ReportProblem from './pages/ReportProblem';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -27,6 +28,19 @@ export default function createRouter(isSigned = false) {
           options={{
             headerBackTitleVisible: false,
             headerTitle: 'Detalhes da encomenda',
+            headerTitleAlign: 'center',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerTransparent: true,
+            headerTintColor: '#fff',
+          }}
+        />
+        <Stack.Screen
+          name="ReportProblem"
+          component={ReportProblem}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: 'Informar problema',
+            headerTitleAlign: 'center',
             headerTitleStyle: { fontWeight: 'bold' },
             headerTransparent: true,
             headerTintColor: '#fff',

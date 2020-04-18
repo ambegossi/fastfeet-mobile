@@ -4,6 +4,8 @@ import { darken } from 'polished';
 export const Container = styled.View`
   flex: 1;
   background-color: #fff;
+  display: flex;
+  align-items: center;
 `;
 
 export const TopBox = styled.View`
@@ -73,7 +75,7 @@ export const ButtonsWrapper = styled.View`
   flex-direction: row;
   width: 85%;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 84%;
 `;
 
 export const AddProblemButton = styled.TouchableOpacity`

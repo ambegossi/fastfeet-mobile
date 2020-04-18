@@ -94,33 +94,33 @@ export default function Details({ route }) {
             </CardItem>
           </CardDate>
         </CardStatus>
-        <ButtonsWrapper>
-          <AddProblemButton
-            onPress={() =>
-              navigation.navigate('RegisterProblem', { id: delivery.id })
-            }
-          >
-            <Icon name="close-circle-outline" size={22} color="#E74040" />
-            <ButtonText>Informar Problema</ButtonText>
-          </AddProblemButton>
-          <ViewProblemButton
-            onPress={() =>
-              navigation.navigate('ViewProblem', { id: delivery.id })
-            }
-          >
-            <Icon name="information-outline" size={22} color="#E7BA40" />
-            <ButtonText>Visualizar Problemas</ButtonText>
-          </ViewProblemButton>
-          <ConfirmButton
-            onPress={() =>
-              navigation.navigate('ConfirmDelivery', { id: delivery.id })
-            }
-          >
-            <Icon name="check-circle-outline" size={22} color="#7D40E7" />
-            <ButtonText>Confirmar entrega</ButtonText>
-          </ConfirmButton>
-        </ButtonsWrapper>
       </TopBox>
+      <ButtonsWrapper>
+        <AddProblemButton
+          onPress={() =>
+            navigation.navigate('ReportProblem', { id: delivery.id })
+          }
+        >
+          <Icon name="close-circle-outline" size={22} color="#E74040" />
+          <ButtonText>Informar Problema</ButtonText>
+        </AddProblemButton>
+        <ViewProblemButton
+          onPress={() =>
+            navigation.navigate('ReportProblem', { id: delivery.id })
+          }
+        >
+          <Icon name="information-outline" size={22} color="#E7BA40" />
+          <ButtonText>Visualizar Problemas</ButtonText>
+        </ViewProblemButton>
+        <ConfirmButton
+          onPress={() =>
+            navigation.navigate('ConfirmDelivery', { id: delivery.id })
+          }
+        >
+          <Icon name="check-circle-outline" size={22} color="#7D40E7" />
+          <ButtonText>Confirmar entrega</ButtonText>
+        </ConfirmButton>
+      </ButtonsWrapper>
     </Container>
   );
 }
