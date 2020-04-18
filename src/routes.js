@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -47,6 +48,20 @@ export default function createRouter(isSigned = false) {
             tabBarIcon: ({ focused }) => (
               <Icon
                 name="reorder"
+                size={26}
+                color={focused ? '#7d40e7' : '#999'}
+              />
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="Meu Perfil"
+          component={Profile}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <Icon
+                name="account-circle"
                 size={26}
                 color={focused ? '#7d40e7' : '#999'}
               />
