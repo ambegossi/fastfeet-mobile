@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Details from './pages/Details';
 import ReportProblem from './pages/ReportProblem';
+import ViewProblems from './pages/ViewProblems';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -40,6 +41,18 @@ export default function createRouter(isSigned = false) {
           options={{
             headerBackTitleVisible: false,
             headerTitle: 'Informar problema',
+            headerTitleAlign: 'center',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerTransparent: true,
+            headerTintColor: '#fff',
+          }}
+        />
+        <Stack.Screen
+          name="ViewProblems"
+          component={ViewProblems}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: 'Visualizar problemas',
             headerTitleAlign: 'center',
             headerTitleStyle: { fontWeight: 'bold' },
             headerTransparent: true,

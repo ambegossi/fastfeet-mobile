@@ -106,7 +106,7 @@ export default function Details({ route }) {
         </AddProblemButton>
         <ViewProblemButton
           onPress={() =>
-            navigation.navigate('ReportProblem', { id: delivery.id })
+            navigation.navigate('ViewProblems', { id: delivery.id })
           }
         >
           <Icon name="information-outline" size={22} color="#E7BA40" />
@@ -114,7 +114,7 @@ export default function Details({ route }) {
         </ViewProblemButton>
         <ConfirmButton
           onPress={() =>
-            navigation.navigate('ConfirmDelivery', { id: delivery.id })
+            navigation.navigate('ViewProblems', { id: delivery.id })
           }
         >
           <Icon name="check-circle-outline" size={22} color="#7D40E7" />
