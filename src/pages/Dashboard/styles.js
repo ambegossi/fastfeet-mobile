@@ -8,7 +8,7 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.SafeAreaView`
-  margin-top: 60px;
+  margin-top: 40px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
