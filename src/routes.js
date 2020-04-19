@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import Details from './pages/Details';
 import ReportProblem from './pages/ReportProblem';
 import ViewProblems from './pages/ViewProblems';
+import ConfirmDelivery from './pages/ConfirmDelivery';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -53,6 +54,18 @@ export default function createRouter(isSigned = false) {
           options={{
             headerBackTitleVisible: false,
             headerTitle: 'Visualizar problemas',
+            headerTitleAlign: 'center',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerTransparent: true,
+            headerTintColor: '#fff',
+          }}
+        />
+        <Stack.Screen
+          name="ConfirmDelivery"
+          component={ConfirmDelivery}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: 'Confirmar entrega',
             headerTitleAlign: 'center',
             headerTitleStyle: { fontWeight: 'bold' },
             headerTransparent: true,

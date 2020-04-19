@@ -20,10 +20,6 @@ const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
 
 export default function Profile() {
   const user = useSelector((state) => state.auth.user);
-  const avatar_url = user.avatar.url.replace(
-    /localhost:3333/,
-    'd4ac5d1a.ngrok.io'
-  );
 
   const zonedDate = utcToZonedTime(user.created_at, timeZone);
   const formattedDate = format(zonedDate, pattern);
@@ -40,7 +36,7 @@ export default function Profile() {
         <UserImage
           source={{
             uri:
-              avatar_url ||
+              user.avatar.url ||
               `https://ui-avatars.com/api/?size=140&background=f4effc&color=a28fd0&name=${user.name.replace(
                 /\s/g,
                 '+'

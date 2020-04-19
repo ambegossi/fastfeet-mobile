@@ -103,10 +103,6 @@ function Card({ delivery }) {
 export default function Dashboard() {
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
-  const avatar_url = user.avatar.url.replace(
-    /localhost:3333/,
-    'd4ac5d1a.ngrok.io'
-  );
 
   const [deliveries, setDeliveries] = useState([]);
   const [pending, setPending] = useState(true);
@@ -151,7 +147,7 @@ export default function Dashboard() {
           <UserImage
             source={{
               uri:
-                avatar_url ||
+                user.avatar.url ||
                 `https://ui-avatars.com/api/?size=140&background=f4effc&color=a28fd0&name=${user.name.replace(
                   /\s/g,
                   '+'
